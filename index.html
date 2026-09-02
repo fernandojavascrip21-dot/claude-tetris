@@ -13,6 +13,14 @@
       <canvas id="board" width="300" height="600"></canvas>
 
       <aside class="panel">
+        <div class="panel-section theme-toggle">
+          <span class="label">MODO CLARO</span>
+          <label class="switch">
+            <input type="checkbox" id="theme-switch" />
+            <span class="slider"></span>
+          </label>
+        </div>
+
         <div class="panel-section">
           <span class="label">SCORE</span>
           <span class="value" id="score">0</span>
@@ -24,6 +32,16 @@
         <div class="panel-section">
           <span class="label">LEVEL</span>
           <span class="value" id="level">1</span>
+        </div>
+
+        <div class="panel-section challenge-hud hidden" id="challenge-hud">
+          <span class="label">DESAFÍO</span>
+          <span class="value" id="challenge-level-value">1 / 5</span>
+          <div class="challenge-objective">
+            <span class="label" id="challenge-objective-label">Líneas: 0 / 40</span>
+            <div class="progress-bar"><div class="progress-fill" id="challenge-progress-fill"></div></div>
+          </div>
+          <span class="label" id="challenge-timer">Tiempo: 2:00</span>
         </div>
 
         <div class="panel-section">
@@ -48,7 +66,21 @@
       <div class="overlay-box">
         <p id="overlay-title">GAME OVER</p>
         <p id="overlay-score"></p>
-        <button id="restart-btn">Reiniciar</button>
+        <div class="overlay-actions">
+          <button id="overlay-secondary-btn" class="btn hidden">Continuar</button>
+          <button id="restart-btn" class="btn btn-accent">Reiniciar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mode-select" class="overlay">
+      <div class="overlay-box">
+        <p id="mode-select-title">TETRIS</p>
+        <p class="mode-select-subtitle">Elige un modo de juego</p>
+        <div class="overlay-actions">
+          <button id="mode-classic-btn" class="btn">Modo Clásico</button>
+          <button id="mode-challenge-btn" class="btn btn-accent">Modo Desafío</button>
+        </div>
       </div>
     </div>
   </div>

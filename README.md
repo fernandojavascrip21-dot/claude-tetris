@@ -108,7 +108,7 @@ Aporta el aspecto visual con estética _dark / retro arcade_: fondo oscuro, tipo
 
 Contiene toda la lógica del juego. A grandes rasgos:
 
-- **Modelo del tablero**: una matriz `ROWS × COLS` donde cada celda guarda `0` (vacía) o un índice de color (1–11) que identifica la pieza.
+- **Modelo del tablero**: una matriz `ROWS × COLS` donde cada celda guarda `0` (vacía) o un índice de color (1–12) que identifica la pieza.
 - **Piezas**: definidas como matrices en `PIECES`, cada una con su índice de color en `COLORS`. Incluyen los 7 tetrominós clásicos (I, O, T, S, Z, J, L) y 4 pentominós adicionales (cruz, T, L y escalera) para dar más variedad. Para rotar se calcula la transposición + reverso de filas (`rotateCW`), que funciona con matrices de cualquier tamaño, no solo cuadradas.
 - **Detección de colisiones** (`collide`): comprueba que ninguna celda de la pieza salga del tablero ni se solape con bloques ya fijados.
 - **Wall kicks** (`tryRotate`): si la rotación choca, intenta desplazar la pieza ±1 y ±2 columnas antes de descartar el giro.
@@ -173,8 +173,8 @@ Algunos parámetros fáciles de tunear en `game.js`:
 | `COLS`         | Columnas del tablero                     | `10`                  |
 | `ROWS`         | Filas del tablero                        | `20`                  |
 | `BLOCK`        | Tamaño en píxeles de cada celda          | `30`                  |
-| `COLORS`       | Paleta de colores por tipo de pieza      | 11 colores             |
-| `PIECES`       | Formas de las piezas (tetrominós + pentominós) | 11 piezas        |
+| `COLORS`       | Paleta de colores por tipo de pieza      | 12 colores            |
+| `PIECES`       | Formas de las piezas (tetrominós + pentominós) | 11 piezas       |
 | `LINE_SCORES`  | Puntos por 1, 2, 3 o 4 líneas eliminadas | `[0,100,300,500,800]` |
 | `dropInterval` | Velocidad inicial de caída en ms         | `1000`                |
 
